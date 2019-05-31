@@ -1,13 +1,10 @@
-
 function main() {
+  (function () {
+    'use strict';
 
-(function () {
-   'use strict';
-
-   /* ==============================================
+    /* ==============================================
   	Testimonial Slider
   	=============================================== */
-
   	$('a.page-scroll').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
@@ -21,6 +18,7 @@ function main() {
         }
       });
 
+
     /*====================================
     Show Menu on Book
     ======================================*/
@@ -29,19 +27,16 @@ function main() {
         if ($(window).scrollTop() > navHeight) {
             $('.navbar-default').addClass('on');
         } else {
-            $('.navbar-default').removeClass('on');
+          $('.navbar-default').removeClass('on');
         }
     });
-
     $('body').scrollspy({
         target: '.navbar-default',
         offset: 80
     })
-
   	$(document).ready(function() {
   	  $("#team").owlCarousel({
-
-  	      navigation : false, // Show next and prev buttons
+  	      navigation : true, // Show next and prev buttons
   	      slideSpeed : 300,
   	      paginationSpeed : 400,
   	      autoHeight : true,
@@ -119,7 +114,9 @@ function main() {
 }());
 }
 
-// img zooming function
+    /*====================================
+    image zooming function
+    ======================================*/
 
 $(function(){
     $('.img-circle').click(function(event) {
